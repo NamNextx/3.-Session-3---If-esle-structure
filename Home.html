@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Structore if else</title>
+</head>
+<body>
+<div>
+    <input id="idConvert" type="number" value=1 aria-hidden="true">
+    <input type="button" id="idButton1" onclick="cToF()" value="Convet C to F">
+    <p id="idOutPut"></p>
+</div>
+<div>
+    <input id="idMet">
+    <input type="button" onclick="metToFeet()" value="Convert Met to Feet">
+    <p id="idOutPutFeet"></p>
+</div>
+
+<div>
+
+    <input type="number" id="canh1">
+    <input type="number" id="canh2">
+    <input type="number" id="canh3">
+    <input type="button" onclick="checkTriangle()" value="checkTriangle">
+    <p id="output"> </p>
+</div>
+
+
+<script>
+    var Marth = function (data) {
+        this.data = data;
+        this.convertCtoF = function () {
+            if (isNaN(data)) {
+                return this.data * (9 / 5) + 32;
+            } else return this.data * (9 / 5) + 32;
+        }
+        this.convertMettoFeet = function () {
+            return this.data * 3.2808;
+        }
+
+    }
+
+    function cToF() {
+        var inputC = parseInt(document.getElementById('idConvert').value);
+        var CtoF = new Marth(inputC);
+
+        document.getElementById('idOutPut').innerText = inputC + " C convert to F= " + CtoF.convertCtoF(inputC);
+    }
+
+    function metToFeet() {
+        var inPutmet = parseInt(document.getElementById('idMet').value);
+        var mettofeed = new Marth(inPutmet);
+
+        document.getElementById('idOutPutFeet').innerText = inPutmet + ' m = ' + mettofeed.convertMettoFeet(inPutmet) + ' Feet';
+    }
+
+    function checkTriangle() {
+        var canh1 = parseInt(document.getElementById('canh1').value);
+        var canh2 = parseInt(document.getElementById('canh2').value);
+        var canh3 = parseInt(document.getElementById('canh3').value);
+        let check = canh3 * canh2 * canh1 > 0 && canh1+canh2>canh3 && canh2+canh3>canh1 && canh1+canh3>canh2;
+        if (check) {
+            alert("that answer is correct")
+        }
+    }
+
+
+</script>
+</body>
+</html>
